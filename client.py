@@ -1,3 +1,4 @@
+import os
 import streamlit as st
 from langchain_chroma import Chroma
 from langchain_core.messages import HumanMessage, AIMessage
@@ -9,6 +10,9 @@ from collections import defaultdict
 from langchain.load.dump import dumps
 from langserve import RemoteRunnable
 import math
+from dotenv import load_dotenv
+
+BDC_BOT_URL = os.getenv("BOT_URL", "http://localhost:8000/bdc-bot")
 
 set_verbose(True)
 
@@ -34,9 +38,7 @@ with open( "style.css" ) as css:
 bot_icon = "static/bot-32x32.png"
 user_icon = "static/user-32x32.png"
 
-
-default_rag_chain = RemoteRunnable(url="http://localhost:8000/bdc-bot")
-
+default_rag_chain = RemoteRunnable(url=BDC_BOT_URL)
 
 doc_type_dict = defaultdict(lambda: "Source")
 doc_type_dict['page'] = "BDC Web Page"
