@@ -28,7 +28,7 @@ streamlit run client.py --server.port=8501 --server.enableCORS=false --server.ad
 ### Build Docker Image
 
 ```bash
-docker build -t containers.renci.org/comms/bdc-chatbot-client:0.1.0 .
+docker build -t containers.renci.org/comms/bdcbot-client:0.1.0 .
 
 ```
 
