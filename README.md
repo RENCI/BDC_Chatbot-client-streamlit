@@ -17,6 +17,19 @@ pip install -r requirements.txt
 streamlit run client.py
 ```
 
+or with more controls
+
+```bash
+streamlit run client.py --server.port=8501 --server.enableCORS=false --server.address=0.0.0.0
+```
+
 ## Deployment
+
+### Build Docker Image
+
+```bash
+docker build -t containers.renci.org/comms/bdc-chatbot-client:0.1.0 .
+
+```
 
 TBD

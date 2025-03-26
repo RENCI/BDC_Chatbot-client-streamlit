@@ -12,7 +12,11 @@ from langserve import RemoteRunnable
 import math
 from dotenv import load_dotenv
 
-BDC_BOT_URL = os.getenv("BOT_URL", "http://localhost:8000/bdc-bot")
+load_dotenv()
+
+BDC_BOT_URL = os.getenv('BOT_URL')
+
+print(f'bot location: {BDC_BOT_URL} or {os.environ["BOT_URL"]}')
 
 set_verbose(True)
 
